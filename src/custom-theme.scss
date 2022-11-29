@@ -1,0 +1,79 @@
+// Custom Theming for Angular Material
+// Currently supports only .scss format
+@use '@angular/material' as mat;
+@include mat.core();
+
+$jem-challenge-primary: mat.define-palette(mat.$indigo-palette);
+$jem-challenge-primary-dark: mat.define-palette(mat.$cyan-palette);
+$jem-challenge-accent: mat.define-palette(mat.$blue-palette, A200, A100, A400);
+$jem-challenge-warn: mat.define-palette(mat.$red-palette);
+$jem-challenge-theme: mat.define-light-theme((
+  color: (
+    primary: $jem-challenge-primary,
+    accent: $jem-challenge-accent,
+    warn: $jem-challenge-warn,
+  )
+));
+$jem-challenge-theme-dark: mat.define-dark-theme((
+  color: (
+    primary: $jem-challenge-primary-dark,
+    accent: $jem-challenge-accent,
+    warn: $jem-challenge-warn,
+  )
+));
+
+// Include theme styles for core and each component used in the app
+.theme-dark {
+  @include mat.all-component-themes($jem-challenge-theme-dark);
+  .mat-mdc-table {
+    td:hover {
+      background-color: #4c4c4c;
+    }
+  }
+}
+
+@include mat.all-component-themes($jem-challenge-theme);
+.mat-mdc-table {
+  td:hover {
+    background-color: #eeeeee;
+  }
+}
+
+.cdk-overlay-pane {
+  display: flex;
+  justify-content: center;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  display: var(--mat-form-wrapper-display, initial);
+}
+
+.mat-mdc-paginator {
+  font-size: 14px;
+}
+
+.mat-mdc-chip-set {
+  font-size: 12px;
+}
+
+.mat-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mat-sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.mat-sticky-bottom {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+}

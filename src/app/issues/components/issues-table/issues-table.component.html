@@ -1,0 +1,32 @@
+<div class="actions-bar">
+  <app-tags-selector
+    [entityTags]="filterTags"
+    (changeSelection)="onTagsSelectionChange($event)">
+  </app-tags-selector>
+  <button class="create-button" mat-stroked-button (click)="openCreateDialog()">
+    Open new Issue
+  </button>
+</div>
+<table
+  mat-table
+  [dataSource]="dataSource"
+  *ngIf="dataSource.filteredData.length">
+  <ng-container matColumnDef="issue">
+    <td mat-cell *matCellDef="let element">
+      <app-issue [issue]="element"></app-issue>
+    </td>
+  </ng-container>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+<div *ngIf="!dataSource.filteredData.length" class="jumbotron">
+  <h2>No data found</h2>
+  <small *ngIf="filterTags.length">Please adjust your filters</small>
+</div>
+<mat-paginator
+  class="mat-elevation-z8 mat-sticky-bottom"
+  showFirstLastButtons
+  [length]="100"
+  [pageSize]="10"
+  [pageSizeOptions]="[10, 25, 100]"
+  aria-label="Select page">
+</mat-paginator>

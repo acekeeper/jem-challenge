@@ -1,0 +1,19 @@
+<h4 class="mat-ellipsis">{{ issue.title }}</h4>
+<small class="mat-ellipsis" [innerHtml]="issue.description"></small>
+<mat-chip-listbox aria-label="Tags">
+  <mat-chip-option selectable="false" *ngFor="let tag of issue.tags">
+    {{ tag }}
+  </mat-chip-option>
+</mat-chip-listbox>
+<div class="actions">
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="openEditDialog()">Edit</button>
+    <button mat-menu-item (click)="openDeleteDialog()">Delete</button>
+  </mat-menu>
+</div>

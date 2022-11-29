@@ -1,0 +1,35 @@
+<button
+  class="close-button"
+  mat-icon-button
+  (click)="dialogRef.close()"
+  aria-label="Close">
+  <mat-icon>close</mat-icon>
+</button>
+<h1 mat-dialog-title>Issue #{{ data.id }}</h1>
+<div mat-dialog-content>
+  <form>
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input
+        matInput
+        required
+        [formControl]="titleControl"
+        class="input-bold"
+        cdkFocusInitial />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea matInput rows="3" [formControl]="descriptionControl"></textarea>
+    </mat-form-field>
+    <app-tags-selector
+      [entityTags]="tagsControl.value || []"
+      (changeSelection)="onTagsSelectionChange($event)">
+    </app-tags-selector>
+  </form>
+</div>
+<div mat-dialog-actions [align]="'end'" class="action-bar">
+  <ng-container *ngIf="hasChanges">
+    <button mat-stroked-button (click)="resetChanges()">Discard Changes</button>
+    <button mat-stroked-button (click)="saveChanges()">Save</button>
+  </ng-container>
+</div>

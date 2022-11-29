@@ -1,0 +1,30 @@
+@import (reference) "../../../../assets/styles/_variables";
+
+:host {
+  position: relative;
+  display: block;
+  padding: @spacing-sm @spacing-md;
+
+  h4 {
+    margin: @spacing-inline-sm 0;
+  }
+
+  small {
+    display: block;
+    margin-bottom: @spacing-inline-xs;
+    line-height: @line-height-default;
+  }
+
+  .actions {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &:hover {
+    .actions {
+      display: initial;
+    }
+  }
+}

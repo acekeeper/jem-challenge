@@ -1,0 +1,122 @@
+[
+  {
+    "id": "1",
+    "title": "Scoped styles per module",
+    "description": "<a href='https://google.com' target='_blank'>Now</a> we are only able to write styles per component. These styles are scoped to the component.",
+    "tags": ["feature", "ui", "improvement"]
+  },
+  {
+    "id": "2",
+    "title": "Singleton Services with Standalone Component",
+    "description": "If you import a module with a <strong>service</strong>, that should be a singleton for your app, in a standalone component it will create a new instance of that service. <br/>With the module way component this does not happens, but only when you use a standalone component and its not clear why.",
+    "tags": ["alpha", "ui"]
+  },
+  {
+    "id": "3",
+    "title": "Change FormBuilder scope to root",
+    "description": "Not just is the providedIn: module syntax deprecated, is there any reason I do not see that it every was provided with the module and not as a singleton?",
+    "tags": ["feature", "beta"]
+  },
+  {
+    "id": "4",
+    "title": "blackbox angular code to work on particular components",
+    "description": "I hve seen you have added components without modules and also the possibility to make standalone components.",
+    "tags": ["feature", "improvement"]
+  },
+  {
+    "id": "5",
+    "title": "[i18n] support i18n-localization in template expression.",
+    "description": "for now to support i18n, I should rewrite those code:",
+    "tags": ["feature", "ui", "alpha"]
+  },
+  {
+    "id": "6",
+    "title": "Add option to specify view providers when dynamically creating components",
+    "description": "Lets say our component has a child directive with dependency decorated by @Host. And we want to specify its provider.",
+    "tags": ["feature", "ui", "improvement"]
+  },
+  {
+    "id": "7",
+    "title": "Localize cant parse ICU with plural from JSON at runtime",
+    "description": "Currently, as ngOnDestroy is called before the removal animation of a component, a lot of fantastic removal animations cannot be implemented easily and we have to use confusing workarounds for these animations.",
+    "tags": ["bugfix"]
+  },
+  {
+    "id": "8",
+    "title": "Log an error when Domino code is in a client bundle",
+    "description": "When purely bootstrapping Angular with standalone components, it is hard to understand how more complex examples can utilize routing.",
+    "tags": ["improvement"]
+  },
+  {
+    "id": "9",
+    "title": "Documentation around standalone component routing is lacking",
+    "description": "Not sure if this is a bug, improvement or feature request. But currently the async pipe is not a guarantee to safely update the UI when the value changes.",
+    "tags": ["ui", "improvement"]
+  },
+  {
+    "id": "10",
+    "title": "TestBed should be zoneless compatible",
+    "description": "After upgrading from Angular 14.2.6 to 14.2.9 we noticed a spike in LCP timing on some SSR pages.",
+    "tags": ["improvement"]
+  },
+  {
+    "id": "11",
+    "title": "Using hostDirectives inside Directives easily leads to error NG0309",
+    "description": "Please provide the environment you discovered this bug in (run ng version)",
+    "tags": ["bugfix"]
+  },
+  {
+    "id": "12",
+    "title": "Inject function does not correctly infer the return type when used with generic classes/abstract classes",
+    "description": "Please provide a link to a minimal reproduction of the bug.",
+    "tags": ["feature", "ui", "beta"]
+  },
+  {
+    "id": "13",
+    "title": "Extended diagnostics: Add extension point for own checks",
+    "description": "Here is the Stackblitz playground containing the typedInject function that solves this issue.",
+    "tags": ["alpha", "ui", "improvement"]
+  },
+  {
+    "id": "14",
+    "title": "Cancelling requests with service worker",
+    "description": "Typing issue is due to the AbstractType interface. Its currently defined as follows:",
+    "tags": ["feature", "ui", "improvement"]
+  },
+  {
+    "id": "15",
+    "title": "Renderer2 previousSilbing does not exist",
+    "description": "If we use the inject function with generic class (or abstract class), the return type wont be properly returned",
+    "tags": ["bugfix"]
+  },
+  {
+    "id": "16",
+    "title": "Exported array of standalone components cannot be imported",
+    "description": "By using the shiny new hostDirectives API, I have found myself easily running into error NG0309.",
+    "tags": ["bugfix", "ui"]
+  },
+  {
+    "id": "17",
+    "title": "Types from split classes/interfaces do not get checked in templates",
+    "description": "This could especially be true when using 3rd party packages that use hostDirectives on their own.",
+    "tags": ["improvement"]
+  },
+  {
+    "id": "18",
+    "title": "Child forms when marked dirty do not propagate past parent (e.g grandparent, grand grandparent)",
+    "description": "Removing hostDirecitves from the Directive decorator - but that would be a big bummer imho.",
+    "tags": ["ui", "bugfix"]
+  },
+  {
+    "id": "19",
+    "title": "Error in stackblitz for Dynamic component loader",
+    "description": "When a child form control that is nested past 1 level is marked as dirty with the reactive formControl .markAsDirty().",
+    "tags": ["feature", "beta"]
+  },
+  {
+    "id": "20",
+    "title": "angular.io/errors is incomplete",
+    "description": "All the sudden without any major dependency changes my app has a bug in the dev server. All devs on my team have the same problem..",
+    "tags": ["alpha", "ui"]
+  }
+]
